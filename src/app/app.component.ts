@@ -9,8 +9,7 @@ export class AppComponent implements AfterViewInit {
   showGradient = false;
   showAfterLabel = false;
 
-  constructor() {
-  }
+  constructor() {}
 
   ngAfterViewInit() {
     setTimeout(() => {
