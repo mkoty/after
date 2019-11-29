@@ -8,6 +8,8 @@ import { AfterViewInit, Component } from '@angular/core';
 export class AppComponent implements AfterViewInit {
   showGradient = false;
   showAfterLabel = false;
+  showLabelConture = false;
+  showText = false;
 
   constructor() {}
 
@@ -19,5 +21,13 @@ export class AppComponent implements AfterViewInit {
     setTimeout(() => {
       this.showAfterLabel = true;
     }, 2000);
+
+    setTimeout(() => {
+      this.showLabelConture = true;
+    }, 3000);
+
+    setTimeout(() => {
+      this.showText = true;
+    }, 4000);
   }
 }

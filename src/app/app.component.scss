@@ -1,4 +1,4 @@
-.background-gradient, .x-label, .app-background {
+.background-gradient, .x-label, .app-background, .x-conture, .text-info {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -27,4 +27,13 @@
 
 .x-label {
   background-image: url('../assets/x.png');
+}
+
+.x-conture {
+  background-image: url('../assets/x-conture.png');
+}
+
+.text-info {
+  background-image: url('../assets/text.png');
+  background-size: contain;
 }
