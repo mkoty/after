@@ -144,7 +144,9 @@
         },
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
-          "options": {}
+          "options": {
+            "base-href": "http://stipan.live/after/"
+          }
         }
       }
     }
