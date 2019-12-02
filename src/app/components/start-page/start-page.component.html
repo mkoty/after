@@ -1,0 +1,15 @@
+<img class="pseudo-image" src="../../../assets/start-logo/transparent-x.png" (load)="onImageLoaded()">
+<img class="pseudo-image" src="../../../assets/x-conture.png" (load)="onImageLoaded()">
+<img class="pseudo-image" src="../../../assets/text.png" (load)="onImageLoaded()">
+
+<div class="app-main-container">
+  <div class="app-background show-element"></div>
+  <div class="full-background"
+       [class.show-element]="showBackgroundByCounter"
+       [class.not-full-hiding]="counter > 1"></div>
+  <div class="x-fill-background" [class.show-element]="backgroundLoaded" (transitionend)="xFillingOutEnd()"></div>
+  <div class="background-transparent-x" [class.show-element]="showTransparentX" (transitionend)="backgroundLoadingEnd()"></div>
+  <div class="x-conture" [class.show-element]="xFilled && showLabelConture"></div>
+  <div class="text-info" [class.show-element]="xFilled && showText"></div>
+</div>
+

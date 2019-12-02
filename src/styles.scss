@@ -2,12 +2,6 @@ html {
   background-color: #010139;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Karbon-Regular;
-}
-
 .no-wrap {
   flex-wrap: nowrap;
 }
@@ -85,4 +79,8 @@ body {
 
 .absolute {
   position: absolute;
+}
+
+.pseudo-image {
+  display: none;
 }

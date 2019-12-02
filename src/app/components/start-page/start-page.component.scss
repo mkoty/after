@@ -1,0 +1,62 @@
+.background-gradient, .x-label, .app-background, .x-conture, .text-info, .background-transparent-x, .x-fill-background, .full-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 100vh;
+  width: 100%;
+
+  position: absolute;
+
+  opacity: 0;
+
+  transition: opacity .5s;
+}
+
+.app-background {
+  background-color: #01033a;
+}
+
+.x-fill-background {
+  background-color: #0ba3b5;
+  position: absolute;
+  bottom: 0;
+  height: 0;
+  transition: height 1s ease-in;
+  opacity: 1;
+
+  &.show-element {
+    height: 100vh;
+  }
+}
+
+.background-transparent-x {
+  background-image: url('../../../assets/start-logo/transparent-x.png');
+  transition: opacity .5s ease-out;
+}
+
+.show-element {
+  opacity: 1;
+}
+
+.not-full-hiding:not(.show-element) {
+  opacity: 0.3;
+}
+
+.full-background {
+  background-image: url('../../../assets/start-logo/full-background.jpg');
+  transition: opacity .7s ease-in;
+
+  &.show-element {
+    transition: opacity .5s ease-out;
+  }
+}
+
+.x-conture {
+  background-image: url('../../../assets/x-conture.png');
+}
+
+.text-info {
+  background-image: url('../../../assets/text.png');
+  background-size: contain;
+}
