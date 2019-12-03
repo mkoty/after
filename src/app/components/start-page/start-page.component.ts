@@ -20,13 +20,10 @@ export class StartPageComponent implements AfterViewInit {
   backgroundLoaded = false;
   xFilled = false;
   animationStarts = false;
+  backgroundTransitionEnded = false;
 
   get showBackgroundByCounter(): boolean {
-    const isShown = this.counter % 2 === 1;
-    if (isShown && this.allImagesLoaded && !this.animationStarts) {
-      this.startAnimation();
-    }
-    return isShown;
+    return this.counter % 2 === 1;
   }
 
   get allImagesLoaded(): boolean {
@@ -47,6 +44,19 @@ export class StartPageComponent implements AfterViewInit {
       }
       this.increment();
     }, this.delay);
+  }
+
+  onBackgroundTransitionEnded() {
+    if (this.showBackgroundByCounter) {
+      this.backgroundTransitionEnded = true;
+      this.tryToStartAnimation();
+    }
+  }
+
+  tryToStartAnimation() {
+    if (this.allImagesLoaded && this.showBackgroundByCounter && this.backgroundTransitionEnded && !this.animationStarts) {
+      this.startAnimation();
+    }
   }
 
   startAnimation() {
@@ -75,8 +85,6 @@ export class StartPageComponent implements AfterViewInit {
 
   onImageLoaded() {
     this.loadedImageCounter++;
-    if (this.allImagesLoaded && this.showBackgroundByCounter && !this.animationStarts) {
-      this.startAnimation();
-    }
+    this.tryToStartAnimation();
   }
 }
